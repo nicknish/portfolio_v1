@@ -1,14 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => (
   <header className="header container">
-    <a className="header-logo" href="/">
+    <Link to="/" className="header-logo">
       NN
-    </a>
+    </Link>
     <nav className="header-nav">
       <ul className="header-navlinks">
-        <li><a className="header-navlink" href="/work">Work</a></li>
-        <li><a className="header-navlink" href="/projects">Projects</a></li>
+        <li>
+          <Link to="/work" className="header-navlink">Work</Link>
+        </li>
+        <li>
+          <Link to="/projects" className="header-navlink">Projects</Link>
+        </li>
         <li>
           <a className="header-navlink" href="https://nicknish.blog">Blog</a>
         </li>
