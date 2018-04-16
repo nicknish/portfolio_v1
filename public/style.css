@@ -536,3 +536,7 @@ body {
 .header-navlink {
   margin-right: 5px;
 }
+
+.header-navlink.active {
+  color: red;
+}
