@@ -44,7 +44,12 @@ const Landing = () => (
     <section className="container">
       <h3>More</h3>
       <p>
-        I do some <a href="https://nicknish.blog">writing</a>.
+        I do some
+        {' '}
+        <a href="https://nicknish.blog">writing</a>
+        . I
+        {"'"}
+        m trying to build side projects daily. I really care about living a full life surrounded by people I care about.
       </p>
     </section>
   </div>
