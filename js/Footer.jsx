@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Footer = () => (
-  <footer>
+  <footer className="container">
     <nav>
       <ul>
         <li><a href="https://github.com/nicknish">GitHub</a></li>
