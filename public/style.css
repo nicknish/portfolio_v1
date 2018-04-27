@@ -497,6 +497,10 @@ body {
   margin: 0 auto;
 }
 
+.u-multiLineText {
+  white-space: pre-line;
+}
+
 .header {
   display: flex;
   padding-top: 30px;
@@ -543,3 +547,13 @@ body {
 .header-navlink.active {
   color: red;
 }
+
+/* Project */
+
+.project {}
+
+.project-title {}
+
+.project-backlink {}
+
+.project-date {}
