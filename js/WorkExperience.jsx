@@ -1,38 +1,57 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+
+import data from './work_data.json';
+import WorkExperienceIndex from './WorkExperienceIndex';
+import WorkExperienceShow from './WorkExperienceShow';
 
 const WorkExperience = ({ match }) => (
   <div>
-    <section className="container hero">
-      <h1>
-        Work
-      </h1>
-    </section>
+    <Switch>
+      <Route
+        path={match.path}
+        exact
+        render={props => <WorkExperienceIndex {...props} data={data.work} />}
+      />
+      <Route
+        path={`${match.path}/:id`}
+        render={props => {
+          const selectedExperience = data.work.find(
+            work => work.slug === props.match.params.id
+          );
 
-    <section className="container">
-      <Link to={`${match.path}/bonsai`}>
-        <img src="" alt="Bonsai company logo" />
-      </Link>
-      <h3><Link to={`${match.path}/bonsai`}>Bonsai</Link></h3>
-      <p>Some text about Bonsai</p>
-      <Link to={`${match.path}/bonsai`} className="btn">
-        Read More
-      </Link>
-    </section>
+          return (
+            <WorkExperienceShow
+              backUrl={match.path}
+              experience={selectedExperience}
+            />
+          );
+        }}
+      />
+    </Switch>
 
-    <section className="container">
-      <Link to={`${match.path}/bloomnation`}>
-        <img src="" alt="BloomNation company logo" />
-      </Link>
-      <h3><Link to={`${match.path}/bloomnation`}>BloomNation</Link></h3>
-      <p>Some text about BloomNation</p>
-      <Link to={`${match.path}/bloomnation`} className="btn">
-        Read More
-      </Link>
-    </section>
   </div>
 );
+
+/*
+
+
+{data.work.map(work => <ProjectsIndexCard project={work} key={uuid()} />)}
+{data.work.map(work => (
+  <Route
+    exact
+    to={work.url}
+    render={props => (
+      <ProjectShow
+        project={work}
+        backLink={`${match.path}/bonsai`}
+        {...props}
+      />
+    )}
+  />
+))}
+*/
 
 WorkExperience.propTypes = {
   match: PropTypes.shape.isRequired
