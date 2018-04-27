@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 const ProjectsShow = ({ backUrl, project }) => {
   let externalLink;
   let description;
+  let imageSection;
 
   if (project.external_url) {
     externalLink = (
@@ -18,6 +19,19 @@ const ProjectsShow = ({ backUrl, project }) => {
       .reduce((arr, line) => arr.concat(line, <br />, <br />), []);
   }
 
+  if (project.image_preview_url) {
+    imageSection = (
+      <div className="container">
+        <figure>
+          <img
+            src={project.image_preview_url}
+            alt={project.image_preview_description}
+          />
+        </figure>
+      </div>
+    );
+  }
+
   return (
     <div>
       <section className="container hero">
@@ -26,7 +40,7 @@ const ProjectsShow = ({ backUrl, project }) => {
         {project.date}{externalLink}
       </section>
 
-      <div className="container" />
+      {imageSection}
 
       <div className="container">
         <h3>Project Description</h3>
