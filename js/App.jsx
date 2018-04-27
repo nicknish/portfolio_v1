@@ -2,12 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+// Icons
+import fontawesome from '@fortawesome/fontawesome';
+import faGithubAlt from '@fortawesome/fontawesome-free-brands/faGithubAlt';
+import faTwitter from '@fortawesome/fontawesome-free-brands/faTwitter';
+
+// Pages
 import NotFound from './NotFound';
 import Header from './Header';
 import Landing from './Landing';
 import Footer from './Footer';
 import Projects from './Projects';
 import WorkExperience from './WorkExperience';
+
+// Initialize icon library to enable treeshaking
+fontawesome.library.add(faGithubAlt, faTwitter);
 
 const App = () => (
   <div>
