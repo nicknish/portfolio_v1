@@ -15,6 +15,9 @@ import Footer from './Footer';
 import Projects from './Projects';
 import WorkExperience from './WorkExperience';
 
+// Styling
+import '../scss/app.scss';
+
 // Initialize icon library to enable treeshaking
 fontawesome.library.add(faGithubAlt, faTwitter);
 
