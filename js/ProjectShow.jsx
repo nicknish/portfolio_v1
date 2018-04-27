@@ -32,10 +32,6 @@ const ProjectsShow = ({ backUrl, project }) => {
         <h3>Project Description</h3>
         <p className="u-multiLineText">{description}</p>
       </div>
-
-      <div className="container">
-        <pre><code>{JSON.stringify(project)}</code></pre>
-      </div>
     </div>
   );
 };

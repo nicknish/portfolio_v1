@@ -32,10 +32,6 @@ const WorkExperienceShow = ({ backUrl, experience }) => {
         <h3>Role Description</h3>
         <p className="u-multiLineText">{description}</p>
       </div>
-
-      <div className="container">
-        <pre><code>{JSON.stringify(experience)}</code></pre>
-      </div>
     </div>
   );
 };
