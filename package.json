@@ -5,6 +5,7 @@
     "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"js/**/*.{js,jsx}\"",
     "lint": "eslint **/*.{js,jsx} --quiet"
   },
+  "private": true,
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.5",
     "@fortawesome/fontawesome-free-brands": "^5.0.10",
@@ -15,21 +16,13 @@
     "babel-plugin-transform-decorators-legacy": "1.3.4",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-register": "6.24.1",
-    "compression": "1.6.2",
-    "cors": "2.8.3",
-    "express": "4.15.3",
-    "lodash": "4.17.4",
     "preact": "8.1.0",
     "preact-compat": "3.16.0",
     "prop-types": "15.5.10",
     "react": "15.5.4",
     "react-addons-perf": "15.4.2",
     "react-dom": "15.5.4",
-    "react-redux": "5.0.5",
     "react-router-dom": "4.1.1",
-    "redux": "3.6.0",
-    "redux-thunk": "2.2.0",
-    "styled-components": "2.0.0",
     "uuid": "^3.2.1",
     "webpack": "^3.x.x",
     "webpack-dev-middleware": "1.10.2",
@@ -72,12 +65,5 @@
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
     "webpack-dev-server": "2.4.5"
-  },
-  "name": "complete-intro-to-react",
-  "version": "3.0.0",
-  "description": "A Complete Intro to React workshop",
-  "main": "server.js",
-  "repository": "git@github.com:btholt/complete-intro-to-react.git",
-  "author": "Brian Holt <btholt@gmail.com>",
-  "license": "MIT"
+  }
 }
