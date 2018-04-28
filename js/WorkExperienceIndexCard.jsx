@@ -2,37 +2,47 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const WorkExperienceIndexCard = ({ baseUrl, experience }) => (
-  <section className="container">
-    <Link
-      to={`${baseUrl}/${experience.slug}`}
-      className="experiences-item-img-container"
-    >
-      <img
-        src={experience.image_preview_url}
-        className="experiences-item-img"
-        alt={experience.image_preview_description}
-      />
-    </Link>
+const WorkExperienceIndexCard = ({ baseUrl, experience }) => {
+  let imageSection;
 
-    <h3 className="experiences-item-title">
+  if (experience.image_preview_url) {
+    imageSection = (
       <Link
         to={`${baseUrl}/${experience.slug}`}
-        className="experiences-item-title-link"
+        className="experiences-item-img-container"
       >
-        {experience.title}
+        <img
+          src={experience.image_preview_url}
+          className="experiences-item-img"
+          alt={experience.image_preview_description}
+        />
       </Link>
-    </h3>
+    );
+  }
 
-    <p className="experiences-item-description">
-      {experience.description_excerpt}
-    </p>
+  return (
+    <section className="container">
+      {imageSection}
 
-    <Link to={`${baseUrl}/${experience.slug}`} className="btn">
-      Read More
-    </Link>
-  </section>
-);
+      <h3 className="experiences-item-title">
+        <Link
+          to={`${baseUrl}/${experience.slug}`}
+          className="experiences-item-title-link"
+        >
+          {experience.title}
+        </Link>
+      </h3>
+
+      <p className="experiences-item-description">
+        {experience.description_excerpt}
+      </p>
+
+      <Link to={`${baseUrl}/${experience.slug}`} className="btn">
+        Read More
+      </Link>
+    </section>
+  );
+};
 
 WorkExperienceIndexCard.propTypes = {
   experience: PropTypes.shape.isRequired,
