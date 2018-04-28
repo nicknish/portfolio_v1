@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 const WorkExperienceShow = ({ backUrl, experience }) => {
   let externalLink;
@@ -35,7 +36,10 @@ const WorkExperienceShow = ({ backUrl, experience }) => {
   return (
     <div>
       <section className="container hero">
-        <Link to={backUrl}>Back to Work</Link>
+        <Link to={backUrl}>
+          <FontAwesomeIcon icon={['fas', 'caret-left']} />
+          Back to Work
+        </Link>
         <h1>{experience.title}</h1>
         {experience.date}{externalLink}
       </section>

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 const ProjectsShow = ({ backUrl, project }) => {
   let externalLink;
@@ -35,7 +36,10 @@ const ProjectsShow = ({ backUrl, project }) => {
   return (
     <div>
       <section className="container hero">
-        <Link to={backUrl}>Back to projects</Link>
+        <Link to={backUrl}>
+          <FontAwesomeIcon icon={['fas', 'caret-left']} />
+          Back to projects
+        </Link>
         <h1>{project.title}</h1>
         {project.date}{externalLink}
       </section>
