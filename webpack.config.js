@@ -8,7 +8,7 @@ const extractSass = new ExtractTextPlugin({
 
 module.exports = {
   context: __dirname,
-  entry: './js/App.jsx',
+  entry: './js/ClientApp.jsx',
   devtool: 'cheap-eval-source-map',
   output: {
     path: path.join(__dirname, 'public'),
