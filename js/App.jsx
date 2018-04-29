@@ -1,14 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-
-// Icons
-import fontawesome from '@fortawesome/fontawesome';
-import {
-  faCaretLeft,
-  faExternalLinkAlt
-} from '@fortawesome/fontawesome-free-solid';
-import faGithubAlt from '@fortawesome/fontawesome-free-brands/faGithubAlt';
-import faTwitter from '@fortawesome/fontawesome-free-brands/faTwitter';
+import initializeIcons from './Helpers';
 
 // Pages
 import NotFound from './NotFound';
@@ -21,8 +13,7 @@ import WorkExperience from './WorkExperience';
 // Styling
 import '../scss/app.scss';
 
-// Initialize icon library to enable treeshaking
-fontawesome.library.add(faCaretLeft, faExternalLinkAlt, faGithubAlt, faTwitter);
+initializeIcons();
 
 const App = () => (
   <div className="site-container">
