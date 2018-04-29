@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import uuid from 'uuid';
 
 const WorkExperienceShow = ({ backUrl, experience }) => {
   let externalLink;
@@ -17,7 +18,10 @@ const WorkExperienceShow = ({ backUrl, experience }) => {
   if (experience.description) {
     description = experience.description
       .split('\n')
-      .reduce((arr, line) => arr.concat(line, <br />, <br />), []);
+      .reduce(
+        (arr, line) => arr.concat(line, <span key={uuid()}><br /><br /></span>),
+        []
+      );
   }
 
   if (experience.image_preview_url) {

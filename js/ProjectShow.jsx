@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import uuid from 'uuid';
 
 const ProjectsShow = ({ backUrl, project }) => {
   let externalLink;
@@ -17,7 +18,10 @@ const ProjectsShow = ({ backUrl, project }) => {
   if (project.description) {
     description = project.description
       .split('\n')
-      .reduce((arr, line) => arr.concat(line, <br />, <br />), []);
+      .reduce(
+        (arr, line) => arr.concat(line, <span key={uuid()}><br /><br /></span>),
+        []
+      );
   }
 
   if (project.image_preview_url) {
