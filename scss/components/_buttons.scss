@@ -15,10 +15,11 @@
 }
 
 .btn-primary {
-  background: $secondary;
+  background: $brand-color;
   color: white;
+
   &:hover {
-    background: darken($secondary, 10%);
+    background: darken($brand-color, 10%);
     color: white;
   }
 }

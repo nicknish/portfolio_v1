@@ -15,11 +15,11 @@ html {
 }
 
 body {
-  border: 8px solid $secondary;
+  border: 8px solid $accent-color;
   margin: 0;
   font-family: $font;
   font-size: 18px;
-  color: $fontBodyCopyColor;
+  color: $color-body-copy;
 }
 
 img {
@@ -31,12 +31,9 @@ figure {
   margin: 0;
 }
 
-h1 {
-  color: $primary;
-}
 
-h2, h3, h4 {
-  color: $secondary;
+h1, h2, h3, h4 {
+  color: $brand-color;
 }
 
 p {
@@ -44,9 +41,10 @@ p {
 }
 
 a {
-  color: $secondary;
+  color: $brand-color;
   transition: 100ms ease all;
+
   &:hover {
-    color: darken($secondary, 10%);
+    color: darken($brand-color, 10%);
   }
 }
