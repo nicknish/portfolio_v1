@@ -7,8 +7,8 @@
       "image_preview_url": "/public/images/bonsai_preview.png",
       "image_preview_description": "Bonsai company logo",
       "date": "June 2016 – March 2018",
-      "description": "I started working on contract to help implement the front-end for Bonsai in June 2016.\nThe company aimed to embrace future-facing technologies, and I help implement features using a combination of Ruby on Rails, jQuery, and React-Redux.\nIt's been the ultimate pleasure to help build tools that I love to use myself.",
-      "description_excerpt": "Building on React-Redux on Rails for the freelance management platform."
+      "description": "Bonsai is a YCombinator company aimed to be the freelancer business toolkit with contracts, invoices, accounting, and more.\nOnly a half year out of YCombinabot, I began working on contract to help with the growing demands of the frontend for Bonsai.\nAs it became clear that the team needed more than frontend help, I remained on contract but worked full-time as a full stack developer - implementing entire features using Ruby on Rails, jQuery, and React-Redux.\nIt's been the ultimate pleasure to help build tools that I love to use myself.",
+      "description_excerpt": "Using React-Redux on Rails for the freelance management platform."
     },
     {
       "title": "BloomNation",
@@ -19,7 +19,7 @@
       "image_preview_description": "BloomNation company logo",
       "date": "Nov 2014 – Dec 2015",
       "description": "I joined BloomNation in 2015 as a front-end developer to an engineering team of four. My role revolved around all user-facing BloomNation products, including their marketplace, blog, resource center for florists, email marketing, and florist tools.\nBeing apart of a company that helped many business owners survive in challenging times was a huge learning experience.",
-      "description_excerpt": "Building with PHP, advanced CSS, and JavaScript for the florist web platform."
+      "description_excerpt": "Using PHP, advanced CSS, and JavaScript to build the florist web platform."
     }
   ]
 }

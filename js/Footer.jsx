@@ -7,7 +7,7 @@ const SOCIAL_LINKS = {
     icon: ['fab', 'github-alt']
   },
   LINKED_IN: {
-    url: 'https://linkedin/in/nicknish',
+    url: 'https://linkedin.com/in/nicknish',
     icon: ['fab', 'linkedin-in']
   },
   TWITTER: {
