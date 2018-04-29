@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LandingImage from '../public/images/landing_image.jpg';
+import LandingImage from '../public/images/landing_image_cropped.jpg';
 
 const Landing = () => (
   <div className="landing">
@@ -16,7 +16,7 @@ const Landing = () => (
       <img src={LandingImage} alt="Me and my girlfriend!" />
     </section>
 
-    <section className="container">
+    <section className="landing-section container">
       <h3>About <span role="img" aria-label="Wave">👋</span></h3>
       <p>
         I
@@ -33,7 +33,7 @@ const Landing = () => (
       </p>
     </section>
 
-    <section className="container">
+    <section className="landing-section container">
       <h3>Experience</h3>
       <p>
         I
@@ -56,7 +56,7 @@ const Landing = () => (
       </nav>
     </section>
 
-    <section className="container">
+    <section className="landing-section container">
       <h3>More</h3>
       <p>
         I do some
