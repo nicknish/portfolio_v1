@@ -19,5 +19,6 @@
   color: white;
   &:hover {
     background: darken($secondary, 10%);
+    color: white;
   }
 }
