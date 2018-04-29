@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LandingImage from '../public/images/landing_image.jpg';
 
 const Landing = () => (
   <div>
@@ -12,7 +13,7 @@ const Landing = () => (
     </section>
 
     <section className="container--lg">
-      <img src="" alt="" />
+      <img src={LandingImage} alt="Me and my girlfriend!" />
     </section>
 
     <section className="container">
