@@ -5,6 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import data from './work_data.json';
 import WorkExperienceIndex from './WorkExperienceIndex';
 import WorkExperienceShow from './WorkExperienceShow';
+import NotFound from './NotFound';
 
 const WorkExperience = ({ match }) => (
   <div>
@@ -21,6 +22,10 @@ const WorkExperience = ({ match }) => (
             work => work.slug === props.match.params.id
           );
 
+          if (!selectedExperience) {
+            return <NotFound />;
+          }
+
           return (
             <WorkExperienceShow
               backUrl={match.path}
@@ -29,29 +34,11 @@ const WorkExperience = ({ match }) => (
           );
         }}
       />
+      <Route component={NotFound} />
     </Switch>
 
   </div>
 );
-
-/*
-
-
-{data.work.map(work => <ProjectsIndexCard project={work} key={uuid()} />)}
-{data.work.map(work => (
-  <Route
-    exact
-    to={work.url}
-    render={props => (
-      <ProjectShow
-        project={work}
-        backLink={`${match.path}/bonsai`}
-        {...props}
-      />
-    )}
-  />
-))}
-*/
 
 WorkExperience.propTypes = {
   match: PropTypes.shape.isRequired

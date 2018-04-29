@@ -25,9 +25,9 @@ fontawesome.library.add(faCaretLeft, faGithubAlt, faTwitter);
 const App = () => (
   <div>
     <BrowserRouter>
-      <div>
+      <div className="site-container">
         <Header />
-        <main>
+        <main className="site-content">
           <Switch>
             <Route path="/" exact component={Landing} />
             <Route path="/work" component={WorkExperience} />

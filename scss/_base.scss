@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+html {
+  height: 100%;
+  background-color: #fafafa;
+}
+
+body {
+  border: 8px solid $secondary;
+  margin: 0;
+  font-family: $font;
+  font-size: 18px;
+  color: $fontBodyCopyColor;
+}
+
+img {
+  width: auto;
+  max-width: 100%;
+}
+
+figure {
+  margin: 0;
+}
+
+h1 {
+  color: $primary;
+}
+
+h2, h3, h4 {
+  color: $secondary;
+}
+
+p {
+  line-height: 1.6;
+}
+
+a {
+  color: $secondary;
+  transition: 100ms ease all;
+  &:hover {
+    color: darken($secondary, 10%);
+  }
+}

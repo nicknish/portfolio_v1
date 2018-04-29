@@ -37,7 +37,10 @@ const WorkExperienceIndexCard = ({ baseUrl, experience }) => {
         {experience.description_excerpt}
       </p>
 
-      <Link to={`${baseUrl}/${experience.slug}`} className="btn">
+      <Link
+        to={`${baseUrl}/${experience.slug}`}
+        className="btn btn-primary btn-sm"
+      >
         Read More
       </Link>
     </section>

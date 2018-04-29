@@ -37,8 +37,20 @@ const Landing = () => (
         {"'"}
         ve worked for Andreessen-Horowitz and YCombinator companies alike. The only through-line is that I love to work with other passionate folk who care about being kind.
       </p>
-      <Link to="/work">See Work</Link>
-      <Link to="/projects">See Projects</Link>
+      <nav className="landing-experienceLinks">
+        <Link
+          to="/work"
+          className="landing-experienceLink btn btn-primary btn-sm"
+        >
+          See Work
+        </Link>
+        <Link
+          to="/projects"
+          className="landing-experienceLink btn btn-primary btn-sm"
+        >
+          See Projects
+        </Link>
+      </nav>
     </section>
 
     <section className="container">
