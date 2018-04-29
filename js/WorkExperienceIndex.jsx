@@ -28,7 +28,7 @@ const WorkExperienceIndex = ({ match, data }) => (
 );
 
 WorkExperienceIndex.propTypes = {
-  data: PropTypes.arrayOf.isRequired,
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
   match: PropTypes.shape.isRequired
 };
 

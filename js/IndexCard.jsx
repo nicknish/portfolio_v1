@@ -61,13 +61,16 @@ IndexCard.propTypes = {
   slug: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   date: PropTypes.string,
-  imagePreviewUrl: PropTypes.string.isRequired,
-  imagePreviewDescription: PropTypes.string.isRequired,
-  descriptionExcerpt: PropTypes.string.isRequired
+  imagePreviewUrl: PropTypes.string,
+  imagePreviewDescription: PropTypes.string,
+  descriptionExcerpt: PropTypes.string
 };
 
 IndexCard.defaultProps = {
-  date: ''
+  date: null,
+  imagePreviewUrl: null,
+  imagePreviewDescription: null,
+  descriptionExcerpt: null
 };
 
 export default IndexCard;
