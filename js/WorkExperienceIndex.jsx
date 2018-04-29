@@ -5,9 +5,9 @@ import uuid from 'uuid';
 import IndexCard from './IndexCard';
 
 const WorkExperienceIndex = ({ match, data }) => (
-  <div>
+  <div className="index">
     <section className="container hero">
-      <h1 className="projects-title">
+      <h1 className="index-title">
         Work
       </h1>
     </section>

@@ -5,9 +5,9 @@ import uuid from 'uuid';
 import IndexCard from './IndexCard';
 
 const ProjectsIndex = ({ match, data }) => (
-  <div>
+  <div className="index">
     <section className="container hero">
-      <h1>Projects</h1>
+      <h1 className="index-title">Projects</h1>
     </section>
 
     {data.map(project => (
