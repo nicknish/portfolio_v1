@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import LandingImage from '../public/images/landing_image.jpg';
 
 const Landing = () => (
-  <div>
+  <div className="landing">
     <section className="container hero">
-      <h1>
+      <h1 className="landing-title">
         Hi I
         {"'"}
-        m Nick! I am a Front End / Full Stack Developer living in Los Angeles, CA.
+        m Nick! I am a Frontend / Full Stack Developer living in Los Angeles, CA.
       </h1>
     </section>
 
@@ -17,11 +17,13 @@ const Landing = () => (
     </section>
 
     <section className="container">
-      <h3>About</h3>
+      <h3>About <span role="img" aria-label="Wave">👋</span></h3>
       <p>
         I
         {"'"}
-        m Nick, a passionate developer with a deep love for creating great products and the craft of telling important stories. Because my love for frontend, I consider myself a frontend developer first, but I’m wonderfully full-stack — JavaScript, React/Redux, Ruby, Rails, are all fair game.
+        m a passionate developer with a deep love for creating great products and the craft of telling important stories. Because my love for frontend, I consider myself a frontend developer first, but I
+        {"'"}
+        m full-stack — JavaScript, React/Redux, Ruby, Rails, are all fair game.
       </p>
       <p>
         I get stoked over conversations of product, design, and brand building.
@@ -36,7 +38,7 @@ const Landing = () => (
       <p>
         I
         {"'"}
-        ve worked for Andreessen-Horowitz and YCombinator companies alike. The only through-line is that I love to work with other passionate folk who care about being kind.
+        ve worked for Andreessen-Horowitz and YCombinator companies alike. The through-line is working with other talented, passionate, kind folk.
       </p>
       <nav className="landing-experienceLinks">
         <Link
