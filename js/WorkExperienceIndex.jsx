@@ -20,6 +20,7 @@ const WorkExperienceIndex = ({ match, data }) => (
         imagePreviewUrl={experience.image_preview_url}
         imagePreviewDescription={experience.image_preview_description}
         descriptionExcerpt={experience.description_excerpt}
+        date={experience.date}
         key={uuid()}
       />
     ))}

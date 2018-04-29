@@ -18,6 +18,7 @@ const ProjectsIndex = ({ match, data }) => (
         imagePreviewUrl={project.image_preview_url}
         imagePreviewDescription={project.image_preview_description}
         descriptionExcerpt={project.description_excerpt}
+        date={project.date}
         key={uuid()}
       />
     ))}

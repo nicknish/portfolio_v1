@@ -3,14 +3,23 @@
   text-align: center;
 }
 
-.index-card {
+.indexCard {
   margin-bottom: 30px;
 }
 
-.index-card-img-container {
-  display: inline-block;
+.indexCard-headerTitle {
+  margin-bottom: 10px;
 }
 
-.index-card-title-link {
+.indexCard-headerTitleLink {
   text-decoration: none;
+}
+
+.indexCard-headerSubtitle {
+  font-size: 15px;
+  color: $color-subtitle;
+}
+
+.indexCard-img-container {
+  display: inline-block;
 }

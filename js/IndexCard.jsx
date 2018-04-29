@@ -4,21 +4,28 @@ import { Link } from 'react-router-dom';
 
 const IndexCard = ({
   baseUrl,
-  imagePreviewUrl,
   slug,
-  imagePreviewDescription,
   title,
+  date,
+  imagePreviewUrl,
+  imagePreviewDescription,
   descriptionExcerpt
 }) => {
+  let subtitle;
   let imageSection;
+
   const showUrl = `${baseUrl}/${slug}`;
+
+  if (date) {
+    subtitle = <span className="indexCard-headerSubtitle">{date}</span>;
+  }
 
   if (imagePreviewUrl) {
     imageSection = (
-      <Link to={showUrl} className="index-card-img-container">
+      <Link to={showUrl} className="indexCard-img-container">
         <img
           src={imagePreviewUrl}
-          className="index-card-img"
+          className="indexCard-img"
           alt={imagePreviewDescription}
         />
       </Link>
@@ -26,16 +33,19 @@ const IndexCard = ({
   }
 
   return (
-    <section className="container index-card">
+    <section className="indexCard container">
       {imageSection}
 
-      <h3 className="index-card-title">
-        <Link to={showUrl} className="index-card-title-link">
-          {title}
-        </Link>
-      </h3>
+      <div className="indexCard-header">
+        <h3 className="indexCard-headerTitle">
+          <Link to={showUrl} className="indexCard-headerTitleLink">
+            {title}
+          </Link>
+        </h3>
+        {subtitle}
+      </div>
 
-      <p className="index-card-description">
+      <p className="indexCard-description">
         {descriptionExcerpt}
       </p>
 
@@ -50,9 +60,14 @@ IndexCard.propTypes = {
   baseUrl: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  date: PropTypes.string,
   imagePreviewUrl: PropTypes.string.isRequired,
   imagePreviewDescription: PropTypes.string.isRequired,
   descriptionExcerpt: PropTypes.string.isRequired
+};
+
+IndexCard.defaultProps = {
+  date: ''
 };
 
 export default IndexCard;
