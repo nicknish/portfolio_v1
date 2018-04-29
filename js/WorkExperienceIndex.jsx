@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid';
 
-import WorkExperienceIndexCard from './WorkExperienceIndexCard';
+import IndexCard from './IndexCard';
 
 const WorkExperienceIndex = ({ match, data }) => (
   <div>
@@ -13,9 +13,13 @@ const WorkExperienceIndex = ({ match, data }) => (
     </section>
 
     {data.map(experience => (
-      <WorkExperienceIndexCard
+      <IndexCard
         baseUrl={match.path}
-        experience={experience}
+        slug={experience.slug}
+        title={experience.title}
+        imagePreviewUrl={experience.image_preview_url}
+        imagePreviewDescription={experience.image_preview_description}
+        descriptionExcerpt={experience.description_excerpt}
         key={uuid()}
       />
     ))}

@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import data from './work_data.json';
 import WorkExperienceIndex from './WorkExperienceIndex';
-import WorkExperienceShow from './WorkExperienceShow';
+import Show from './Show';
 import NotFound from './NotFound';
 
 const WorkExperience = ({ match }) => (
@@ -27,9 +27,17 @@ const WorkExperience = ({ match }) => (
           }
 
           return (
-            <WorkExperienceShow
+            <Show
               backUrl={match.path}
-              experience={selectedExperience}
+              title={selectedExperience.title}
+              date={selectedExperience.date}
+              externalUrl={selectedExperience.external_url}
+              description={selectedExperience.description}
+              imagePreviewUrl={selectedExperience.image_preview_url}
+              imagePreviewDescription={
+                selectedExperience.image_preview_description
+              }
+              isProject={false}
             />
           );
         }}

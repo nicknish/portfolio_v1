@@ -4,7 +4,8 @@ import { Switch, Route } from 'react-router-dom';
 
 import data from './projects_data.json';
 import ProjectsIndex from './ProjectsIndex';
-import ProjectShow from './ProjectShow';
+import Show from './Show';
+import NotFound from './NotFound';
 
 const Projects = ({ match }) => (
   <div>
@@ -21,7 +22,24 @@ const Projects = ({ match }) => (
             project => project.slug === props.match.params.id
           );
 
-          return <ProjectShow backUrl={match.path} project={selectedProject} />;
+          if (!selectedProject) {
+            return <NotFound />;
+          }
+
+          return (
+            <Show
+              backUrl={match.path}
+              title={selectedProject.title}
+              date={selectedProject.date}
+              externalUrl={selectedProject.external_url}
+              description={selectedProject.description}
+              imagePreviewUrl={selectedProject.image_preview_url}
+              imagePreviewDescription={
+                selectedProject.image_preview_description
+              }
+              isProject
+            />
+          );
         }}
       />
     </Switch>
