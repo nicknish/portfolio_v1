@@ -22,7 +22,19 @@ const Show = ({
   const headerText = `${isProject ? 'Project' : 'Role'} Description`;
 
   if (externalUrl) {
-    externalLink = <span> -- <a href={externalUrl}>See it here</a></span>;
+    externalLink = (
+      <span>
+        {' -- '}
+        <a href={externalUrl} className="show-externalLink">
+          See it here
+          {' '}
+          <FontAwesomeIcon
+            icon="external-link-alt"
+            className="show-externalLinkIcon"
+          />
+        </a>
+      </span>
+    );
   }
 
   if (description) {

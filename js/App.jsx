@@ -3,7 +3,10 @@ import { Route, Switch } from 'react-router-dom';
 
 // Icons
 import fontawesome from '@fortawesome/fontawesome';
-import faCaretLeft from '@fortawesome/fontawesome-free-solid';
+import {
+  faCaretLeft,
+  faExternalLinkAlt
+} from '@fortawesome/fontawesome-free-solid';
 import faGithubAlt from '@fortawesome/fontawesome-free-brands/faGithubAlt';
 import faTwitter from '@fortawesome/fontawesome-free-brands/faTwitter';
 
@@ -19,7 +22,7 @@ import WorkExperience from './WorkExperience';
 import '../scss/app.scss';
 
 // Initialize icon library to enable treeshaking
-fontawesome.library.add(faCaretLeft, faGithubAlt, faTwitter);
+fontawesome.library.add(faCaretLeft, faExternalLinkAlt, faGithubAlt, faTwitter);
 
 const App = () => (
   <div className="site-container">
