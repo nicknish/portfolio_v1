@@ -64,7 +64,10 @@ const Show = ({
     <div className="show-page">
       <section className="container hero">
         <Link to={backUrl} className="show-backLink">
-          <FontAwesomeIcon icon={['fas', 'caret-left']} />
+          <FontAwesomeIcon
+            icon={['fas', 'caret-left']}
+            className="show-backLinkIcon"
+          />
           <span className="show-backLinkText">
             {backLinkText}
           </span>
