@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import LandingImage from '../public/images/landing_image_cropped.jpg';
+import LandingImage from '../images/landing_image_cropped.jpg';
 
 const Landing = () => (
   <div className="landing">
