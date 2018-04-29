@@ -42,8 +42,10 @@ p {
 
 a {
   color: $brand-color;
+  text-decoration: none;
   transition: 100ms ease all;
 
+  &:active,
   &:hover {
     color: darken($brand-color, 10%);
   }
