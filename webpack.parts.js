@@ -61,7 +61,7 @@ exports.extractSCSS = ({ include, exclude, use }) => {
   const plugin = new ExtractTextPlugin({
     // `allChunks` is needed to extract from extracted chunks as well.
     allChunks: true,
-    filename: '[name].css'
+    filename: '[name].[hash:4].css'
   });
 
   return {

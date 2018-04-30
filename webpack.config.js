@@ -28,13 +28,16 @@ const commonConfig = merge([
 ]);
 
 const productionConfig = merge([
+  {
+    output: {
+      filename: '[name].[chunkhash].js'
+    }
+  },
   parts.extractSCSS({
     use: [
       {
         loader: 'css-loader',
-        options: {
-          minimize: true
-        }
+        options: { minimize: true }
       },
       parts.autoprefixCSS(),
       'sass-loader'
@@ -48,7 +51,15 @@ const productionConfig = merge([
     {
       from: './_redirects'
     }
-  ])
+  ]),
+  {
+    // Split bundles into vendor and main code
+    optimization: {
+      splitChunks: {
+        chunks: 'initial'
+      }
+    }
+  }
 ]);
 
 const developmentConfig = merge([
