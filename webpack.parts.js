@@ -87,6 +87,13 @@ exports.extractSCSS = ({
   };
 };
 
+exports.autoprefixCSS = () => ({
+  loader: "postcss-loader",
+  options: {
+    plugins: () => [require('autoprefixer')()]
+  }
+})
+
 exports.loadImages = ({
   name
 }) => ({

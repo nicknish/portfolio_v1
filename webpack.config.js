@@ -28,7 +28,7 @@ const commonConfig = merge([{
 
 const productionConfig = merge([
   parts.extractSCSS({
-    use: ['css-loader', 'sass-loader']
+    use: ['css-loader', parts.autoprefixCSS(), 'sass-loader']
   }),
   parts.copyImages([{
     from: './src/images/',
