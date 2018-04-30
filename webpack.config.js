@@ -40,10 +40,13 @@ const productionConfig = merge([
       'sass-loader'
     ]
   }),
-  parts.copyImages([
+  parts.copyFiles([
     {
       from: './src/images/',
       to: 'images/'
+    },
+    {
+      from: './_redirects'
     }
   ])
 ]);

@@ -105,7 +105,7 @@ exports.loadImages = ({ name }) => ({
   }
 });
 
-exports.copyImages = (files = []) => ({
+exports.copyFiles = (files = []) => ({
   plugins: [new CopyWebpackPlugin([...files])]
 });
 
