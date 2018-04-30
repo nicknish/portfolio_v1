@@ -1,72 +1,59 @@
-const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const merge = require('webpack-merge');
+const parts = require('./webpack.parts');
 
-const extractSass = new ExtractTextPlugin({
-  filename: 'bundle.css',
-  disable: process.env.NODE_ENV === 'development'
-});
+const commonConfig = merge([{
+    resolve: {
+      extensions: ['.js', '.jsx', '.json']
+    }
+  },
+  parts.enforceLinting({
+    loader: 'eslint-loader',
+    exclude: /node_modules/
+  }),
+  parts.transformJS(),
+  parts.loadImages({
+    name: 'images/[name].[hash].[ext]'
+  }),
+  parts.generateHtml({
+    template: './src/index.html'
+  }),
+  {
+    stats: {
+      colors: true,
+      reasons: true, // better error messages
+      chunks: true
+    }
+  }
+]);
 
-module.exports = {
-  context: __dirname,
-  entry: './js/ClientApp.jsx',
-  devtool: 'cheap-eval-source-map',
-  output: {
-    path: path.join(__dirname, 'public'),
-    filename: 'bundle.js'
+const productionConfig = merge([
+  parts.extractSCSS({
+    use: ['css-loader', 'sass-loader']
+  }),
+  parts.copyImages([{
+    from: './src/images/',
+    to: 'images/'
+  }])
+]);
+
+const developmentConfig = merge([{
+    devtool: 'cheap-eval-source-map'
   },
-  devServer: {
-    publicPath: '/public/',
-    historyApiFallback: true
-  },
-  resolve: {
-    extensions: ['.js', '.jsx', '.json']
-  },
-  stats: {
-    colors: true,
-    reasons: true, // better error messages
-    chunks: true
-  },
-  module: {
-    rules: [{
-        // enforces linting rules and prevents compilation
-        enforce: 'pre',
-        test: /\.jsx?$/,
-        loader: 'eslint-loader',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.jsx?$/,
-        loader: 'babel-loader'
-      },
-      {
-        test: /\.scss$/,
-        use: extractSass.extract({
-          use: [{
-            loader: "css-loader"
-          }, {
-            loader: "sass-loader"
-          }],
-          // use style-loader in development
-          fallback: "style-loader"
-        })
-      },
-      {
-        test: /\.(jpg|jpeg|png|gif)$/,
-        use: {
-          loader: "file-loader",
-          options: {
-            name: "[path][name].[ext]",
-          }
-        }
-      }
-    ]
-  },
-  plugins: [
-    extractSass,
-    new CopyWebpackPlugin([{
-      from: path.join(__dirname, 'images'),
-      to: path.join(__dirname, 'public/images')
-    }])
-  ]
+  parts.loadSCSS(),
+  parts.devServer({
+    host: process.env.HOST,
+    port: process.env.PORT
+  })
+]);
+
+module.exports = mode => {
+  if (mode === 'production') {
+    return merge(commonConfig, productionConfig, {
+      mode
+    });
+  }
+
+  return merge(commonConfig, developmentConfig, {
+    mode
+  });
 };
