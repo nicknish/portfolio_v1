@@ -1,7 +1,8 @@
 const merge = require('webpack-merge');
 const parts = require('./webpack.parts');
 
-const commonConfig = merge([{
+const commonConfig = merge([
+  {
     resolve: {
       extensions: ['.js', '.jsx', '.json']
     }
@@ -28,7 +29,8 @@ const commonConfig = merge([{
 
 const productionConfig = merge([
   parts.extractSCSS({
-    use: [{
+    use: [
+      {
         loader: 'css-loader',
         options: {
           minimize: true
@@ -38,13 +40,16 @@ const productionConfig = merge([
       'sass-loader'
     ]
   }),
-  parts.copyImages([{
-    from: './src/images/',
-    to: 'images/'
-  }])
+  parts.copyImages([
+    {
+      from: './src/images/',
+      to: 'images/'
+    }
+  ])
 ]);
 
-const developmentConfig = merge([{
+const developmentConfig = merge([
+  {
     devtool: 'cheap-eval-source-map'
   },
   parts.loadSCSS(),
