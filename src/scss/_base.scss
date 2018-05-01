@@ -20,6 +20,10 @@ body {
   font-family: $font;
   font-size: 18px;
   color: $color-body-copy;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
+  text-rendering: optimizeLegibility;
 }
 
 img {
