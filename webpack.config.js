@@ -33,6 +33,7 @@ const productionConfig = merge([
       filename: '[name].[chunkhash].js'
     }
   },
+  parts.cleanBuildDirectory('dist/'),
   parts.extractSCSS({
     use: [
       {
