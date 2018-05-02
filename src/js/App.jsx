@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import initializeIcons from './Helpers';
+import Analytics from './Analytics';
 
 // Pages
 import NotFound from './NotFound';
@@ -17,6 +18,7 @@ initializeIcons();
 
 const App = () => (
   <div className="site-container">
+    <Route component={Analytics} /* Analytics workaround for React-Router */ />
     <Header />
     <main className="site-content">
       <Switch>
