@@ -35,7 +35,7 @@ const Landing = () => (
       <p>
         I do some
         {' '}
-        <a href={process.env.BLOG_URL}>writing</a>
+        <a href="https://nicknish.blog">writing</a>
         . I
         {"'"}
         m trying to build side projects daily. First and foremost, I want to live a full life surrounded by people I care for.

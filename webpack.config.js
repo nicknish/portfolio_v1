@@ -16,7 +16,7 @@ const commonConfig = merge([
       fs: 'empty'
     }
   },
-  parts.dotenv(),
+  // parts.dotenv(),
   parts.enforceLinting({
     loader: 'eslint-loader',
     exclude: /node_modules/
