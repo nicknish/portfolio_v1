@@ -3,7 +3,7 @@
 import React from 'react';
 import ReactGA from 'react-ga';
 
-ReactGA.initialize('UA-72187213-1', {
+ReactGA.initialize(process.env.GOOGLE_ANALYTICS, {
   debug: process.env.NODE_ENV !== 'production'
 });
 

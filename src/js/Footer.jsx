@@ -3,15 +3,15 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 const SOCIAL_LINKS = {
   GITHUB: {
-    url: 'https://github.com/nicknish',
+    url: process.env.GITHUB,
     icon: ['fab', 'github-alt']
   },
-  LINKED_IN: {
-    url: 'https://linkedin.com/in/nicknish',
+  LINKEDIN: {
+    url: process.env.LINKEDIN,
     icon: ['fab', 'linkedin-in']
   },
   TWITTER: {
-    url: 'https://twitter.com/nickjnish',
+    url: process.env.TWITTER,
     icon: ['fab', 'twitter']
   }
 };

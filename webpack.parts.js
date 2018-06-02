@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const dotenv = require('dotenv-webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -120,4 +121,8 @@ exports.generateHtml = ({ template }) => ({
 
 exports.cleanBuildDirectory = path => ({
   plugins: [new CleanWebpackPlugin(path)]
+});
+
+exports.dotenv = () => ({
+  plugins: [new dotenv()]
 });

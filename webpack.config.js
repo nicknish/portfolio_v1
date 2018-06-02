@@ -11,8 +11,12 @@ const commonConfig = merge([
   {
     resolve: {
       extensions: ['.js', '.jsx', '.json']
+    },
+    node: {
+      fs: 'empty'
     }
   },
+  parts.dotenv(),
   parts.enforceLinting({
     loader: 'eslint-loader',
     exclude: /node_modules/
