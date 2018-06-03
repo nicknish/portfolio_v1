@@ -23,7 +23,7 @@ const Header = () => (
           </NavLink>
         </li>
         <li>
-          <a className="header-navlink" href="https://nicknish.blog">Blog</a>
+          <a className="header-navlink" href={process.env.BLOG_URL}>Blog</a>
         </li>
       </ul>
     </nav>

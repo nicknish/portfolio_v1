@@ -124,5 +124,5 @@ exports.cleanBuildDirectory = path => ({
 });
 
 exports.dotenv = () => ({
-  plugins: [new dotenv()]
+  plugins: [new dotenv({ systemvars: true })]
 });
