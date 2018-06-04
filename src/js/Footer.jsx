@@ -1,5 +1,6 @@
 import React from 'react';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import ContactForm from './ContactForm';
 
 const SOCIAL_LINKS = {
   GITHUB: {
@@ -17,7 +18,8 @@ const SOCIAL_LINKS = {
 };
 
 const Footer = () => (
-  <footer className="footer container">
+  <footer className="footer">
+    <ContactForm />
     <nav className="footer-social">
       <ul className="footer-socialList">
         {Object.keys(SOCIAL_LINKS).map(key => (
