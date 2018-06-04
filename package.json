@@ -11,6 +11,7 @@
     "@fortawesome/fontawesome-free-brands": "^5.0.10",
     "@fortawesome/fontawesome-free-solid": "^5.0.10",
     "@fortawesome/react-fontawesome": "^0.0.18",
+    "axios": "^0.18.0",
     "dotenv-webpack": "^1.5.5",
     "prop-types": "15.5.10",
     "react": "16.3.2",
