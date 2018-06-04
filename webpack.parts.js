@@ -4,6 +4,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin;
 
 exports.devServer = ({ host, port } = {}) => ({
   devServer: {
@@ -125,4 +127,8 @@ exports.cleanBuildDirectory = path => ({
 
 exports.dotenv = () => ({
   plugins: [new dotenv({ systemvars: true })]
+});
+
+exports.bundleAnalyzer = () => ({
+  plugins: [new BundleAnalyzerPlugin()]
 });
