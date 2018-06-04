@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import initializeIcons from './Helpers';
 import Analytics from './Analytics';
 
 // Pages
@@ -13,8 +12,6 @@ import WorkExperience from './WorkExperience';
 
 // Styling
 import '../scss/app.scss';
-
-initializeIcons();
 
 const App = () => (
   <div className="site-container">

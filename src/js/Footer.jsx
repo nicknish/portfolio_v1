@@ -1,19 +1,18 @@
 import React from 'react';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import ContactForm from './ContactForm';
 
 const SOCIAL_LINKS = {
   GITHUB: {
     url: process.env.GITHUB,
-    icon: ['fab', 'github-alt']
+    icon: 'fab fa-github-alt'
   },
   LINKEDIN: {
     url: process.env.LINKEDIN,
-    icon: ['fab', 'linkedin-in']
+    icon: 'fab fa-linkedin-in'
   },
   TWITTER: {
     url: process.env.TWITTER,
-    icon: ['fab', 'twitter']
+    icon: 'fab fa-twitter'
   }
 };
 
@@ -28,7 +27,7 @@ const Footer = () => (
               href={SOCIAL_LINKS[key].url}
               className="footer-socialListItemLink"
             >
-              <FontAwesomeIcon icon={SOCIAL_LINKS[key].icon} />
+              <i className={SOCIAL_LINKS[key].icon} />
             </a>
           </li>
         ))}

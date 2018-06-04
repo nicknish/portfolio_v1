@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import uuid from 'uuid';
 
 const Show = ({
@@ -28,10 +27,7 @@ const Show = ({
         <a href={externalUrl} className="show-externalLink">
           See it here
           {' '}
-          <FontAwesomeIcon
-            icon="external-link-alt"
-            className="show-externalLinkIcon"
-          />
+          <i className="show-externalLinkIcon fa fa-external-link-alt" />
         </a>
       </span>
     );
@@ -64,10 +60,7 @@ const Show = ({
     <div className="show-page">
       <section className="container hero">
         <Link to={backUrl} className="show-backLink">
-          <FontAwesomeIcon
-            icon={['fas', 'caret-left']}
-            className="show-backLinkIcon"
-          />
+          <i className="show-backLinkIcon fas fa-caret-left" />
           <span className="show-backLinkText">
             {backLinkText}
           </span>
